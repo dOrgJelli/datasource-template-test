@@ -8,7 +8,11 @@ import {
   VoteCast
 } from "../types/DAONetwork/DAONetwork";
 import {
-  insertNewDAO
+  SetName
+} from "../types/DAONetwork/Avatar";
+import {
+  insertNewDAO,
+  setDAOName
 } from "./dao";
 import {
   updateTotalSupply
@@ -32,6 +36,10 @@ import {
 
 export function handleNewDAO(event: NewDAO): void {
   insertNewDAO(event.address, event.params._avatar);
+}
+
+export function handleSetName(event: SetName): void {
+  setDAOName(event.address, event.params._name);
 }
 
 export function handleRegisterFounder(event: RegisterFounder): void {

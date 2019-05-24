@@ -17,3 +17,5 @@ eventHandlers:
     handler: handleReputationProposalExecuted
   - event: VoteCast(address,bytes32,address,uint256,uint256)
     handler: handleVoteCast
+templates:
+  - Avatar

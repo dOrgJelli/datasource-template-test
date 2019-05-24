@@ -4,6 +4,7 @@
       "mappings": [
       {
         "name": "DAONetwork",
+        "dao": "base",
         "contractName": "DAONetwork",
         "mapping": "DAONetwork"
       }

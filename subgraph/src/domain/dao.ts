@@ -1,6 +1,7 @@
 import { Address, store } from "@graphprotocol/graph-ts";
 import { DAO } from "../types/schema";
 import { Avatar } from "../types/DAONetwork/Avatar";
+import { Avatar as AvatarDataSource } from "../types/DAONetwork/templates";
 import { getDAONetwork } from "./daoNetwork";
 import { getReputation, setDAO } from "./reputation";
 
@@ -20,6 +21,7 @@ export function insertNewDAO(
   daoNetworkAddress: Address,
   avatarAddress: Address
 ): DAO {
+  AvatarDataSource.create(avatarAddress);
   let avatar = Avatar.bind(avatarAddress);
   let reputationAddress = avatar.nativeReputation();
   let dao = getDAO(avatarAddress.toHex());
@@ -28,6 +30,15 @@ export function insertNewDAO(
   dao.name = avatar.orgName().toString();
   dao.reputation = getReputation(reputationAddress.toHex()).id;
   saveDAO(dao);
-  setDAO(reputationAddress.toHex(), dao);
+  setDAO(reputationAddress.toHex(), dao)
   return dao;
+}
+
+export function setDAOName(
+  avatarAddress: Address,
+  name: string
+): void {
+  let dao = getDAO(avatarAddress.toHex());
+  dao.name = name;
+  saveDAO(dao);
 }

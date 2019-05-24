@@ -17,6 +17,7 @@ contract Avatar is Ownable {
     string public orgName;
     Reputation public nativeReputation;
 
+    event SetName(string _name);
     event GenericCall(address indexed _contract, bytes _data, uint _value, bool _success);
     event SendEther(uint256 _amountInWei, address indexed _to);
     event ExternalTokenTransfer(address indexed _externalToken, address indexed _to, uint256 _value);
@@ -38,6 +39,16 @@ contract Avatar is Ownable {
     */
     function() external payable {
         emit ReceiveEther(msg.sender, msg.value);
+    }
+
+    /**
+    * @dev sets the organization's name.
+    *      This is being used to very dynamic datasources work.
+    */
+    function setName(string memory _orgName)
+    public {
+        orgName = _orgName;
+        emit SetName(_orgName);
     }
 
     /**

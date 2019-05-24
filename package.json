@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "cd ./subgraph && npm run start",
-    "stopp": "cd ./subgraph && npm run stop:env",
+    "stop": "cd ./subgraph && npm run stop:env",
     "postinstall": "npx lerna bootstrap"
   },
   "devDependencies": {

@@ -1,0 +1,5 @@
+abis:
+  - Avatar
+eventHandlers:
+  - event: SetName(string)
+    handler: handleSetName
