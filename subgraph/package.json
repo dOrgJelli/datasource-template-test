@@ -23,10 +23,13 @@
     "@types/jest": "^24.0.13",
     "delay-cli": "^1.1.0",
     "dotenv": "^8.0.0",
+    "ethereumjs-wallet": "^0.6.0",
+    "hdwallet-accounts": "0.0.1",
     "jest": "^24.8.0",
     "spawn-command": "0.0.2-1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "web3": "^1.0.0-beta.37"
   },
   "jest": {
     "roots": [
