@@ -1,0 +1,8 @@
+{
+  "lerna": "3.14.1",
+  "packages": [
+    "subgraph/**",
+    "protocol/**"
+  ],
+  "version": "0.0.0-alpha"
+}

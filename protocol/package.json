@@ -1,0 +1,18 @@
+{
+  "name": "dynamic-datasource-test-protocol",
+  "version": "0.0.0-alpha",
+  "engines": {
+    "node": ">=9.4.0"
+  },
+  "scripts": {
+    "build": "truffle compile",
+    "test": "truffle test",
+    "migrate": "truffle migrate"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "2.1.3"
+  },
+  "devDependencies": {
+    "truffle": "^5.0.19"
+  }
+}
