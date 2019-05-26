@@ -1,7 +1,7 @@
 const path = require('path')
 const subgraphRepo = path.resolve(`${__dirname}/..`)
 const { migrationFileLocation } = require('./settings')
-const migration = require('dynamic-datasource-test-protocol/migration.json')
+const migration = require('datasource-template-test-protocol/migration.json')
 const fs = require('fs')
 
 async function setupenv () {

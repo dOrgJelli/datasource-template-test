@@ -43,7 +43,7 @@ contract Avatar is Ownable {
 
     /**
     * @dev sets the organization's name.
-    *      This is being used to very dynamic datasources work.
+    *      This is being used to very datasource templates work.
     */
     function setName(string memory _orgName)
     public {

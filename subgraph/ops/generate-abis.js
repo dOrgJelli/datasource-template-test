@@ -2,10 +2,10 @@ const fs = require('fs')
 const path = require('path')
 
 /**
- * Fetch all abis from dynamic-datasource-test-protocol into the `abis` folder.
+ * Fetch all abis from datasource-template-test-protocol into the `abis` folder.
  */
 async function generateAbis () {
-  var base = require('path').dirname(require.resolve('dynamic-datasource-test-protocol/build/contracts/DAONetwork.json'))
+  var base = require('path').dirname(require.resolve('datasource-template-test-protocol/build/contracts/DAONetwork.json'))
   if (!fs.existsSync('./abis/')) {
     fs.mkdirSync('./abis/')
   }

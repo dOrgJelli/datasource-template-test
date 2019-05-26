@@ -1,11 +1,11 @@
 import { getOptions, getWeb3, sendQuery } from "./util";
 
-const Reputation = require("dynamic-datasource-test-protocol/build/contracts/Reputation.json");
-const Avatar = require("dynamic-datasource-test-protocol/build/contracts/Avatar.json");
-const DAONetwork = require("dynamic-datasource-test-protocol/build/contracts/DAONetwork.json");
-const DAONetworkAddress = require("dynamic-datasource-test-protocol/migration.json")["private"]["DAONetwork"];
+const Reputation = require("datasource-template-test-protocol/build/contracts/Reputation.json");
+const Avatar = require("datasource-template-test-protocol/build/contracts/Avatar.json");
+const DAONetwork = require("datasource-template-test-protocol/build/contracts/DAONetwork.json");
+const DAONetworkAddress = require("datasource-template-test-protocol/migration.json")["private"]["DAONetwork"];
 
-describe("Dynamic Data Source Test", () => {
+describe("Data Source Template Test", () => {
   let web3;
   let daoNetwork;
   let reputation;

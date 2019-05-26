@@ -2,14 +2,6 @@ abis:
   - DAONetwork
   - Avatar
   - Reputation
-entities:
-  - Debug
-  - DAONetwork
-  - DAO
-  - Member
-  - Reputation
-  - ReputationProposal
-  - Vote
 eventHandlers:
   - event: NewDAO(address,address)
     handler: handleNewDAO
