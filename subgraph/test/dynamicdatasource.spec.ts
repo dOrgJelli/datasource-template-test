@@ -11,6 +11,7 @@ describe("Dynamic Data Source Test", () => {
   let reputation;
   let avatar;
   const orgName = "foo";
+  const newOrgName = "bar";
 
   beforeAll(async () => {
     // deploy dao
@@ -43,32 +44,26 @@ describe("Dynamic Data Source Test", () => {
 
   it("Avatar.setName Updates The Graph", async () => {
     // query to verify the old name
-    let { debugs } = await sendQuery(`{
-      debugs {
-        id,
-        message
-      }
-    }`);
-
-    console.log(debugs);
-
-    let { daonetwork } = await sendQuery(`{
-      daonetwork(id: "${DAONetworkAddress.toLowerCase()}") {
-        id
-      }
-    }`);
-
-    console.log(daonetwork);
-
-    let { daos } = await sendQuery(`{
-      daos {
-        id
-      }
-    }`);
-
-    console.log(daos);
+    {
+      let { dao } = await sendQuery(`{
+        dao(id: "${avatar.options.address.toLowerCase()}") {
+          name
+        }
+      }`);
+      expect(dao.name).toEqual(orgName);
+    }
 
     // set name
+    await avatar.methods.setName(newOrgName).send();
+
     // query to verify the new name
+    {
+      let { dao } = await sendQuery(`{
+        dao(id: "${avatar.options.address.toLowerCase()}") {
+          name
+        }
+      }`);
+      expect(dao.name).toEqual(newOrgName);
+    }
   });
 });

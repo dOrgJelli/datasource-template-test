@@ -9,7 +9,7 @@
     "build": "node ops/generate-abis.js && node ops/generate-schema.js && node ops/generate-subgraph.js && node ops/graph-codegen.js",
     "deploy": "node ops/setup-env.js",
     "migrate": "npm explore dynamic-datasource-test-protocol -- npm run migrate",
-    "start:env": "docker-compose up -d",
+    "start:env": "docker-compose up -d && npm run migrate",
     "stop:env": "docker-compose down",
     "test": "jest --runInBand --forceExit",
     "postinstall": "npm explore dynamic-datasource-test-protocol -- npm run build"
