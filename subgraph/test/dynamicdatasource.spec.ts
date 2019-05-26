@@ -43,13 +43,30 @@ describe("Dynamic Data Source Test", () => {
 
   it("Avatar.setName Updates The Graph", async () => {
     // query to verify the old name
-    let result = await sendQuery(`{
+    let { debugs } = await sendQuery(`{
+      debugs {
+        id,
+        message
+      }
+    }`);
+
+    console.log(debugs);
+
+    let { daonetwork } = await sendQuery(`{
+      daonetwork(id: "${DAONetworkAddress.toLowerCase()}") {
+        id
+      }
+    }`);
+
+    console.log(daonetwork);
+
+    let { daos } = await sendQuery(`{
       daos {
         id
       }
     }`);
 
-    console.log(result);
+    console.log(daos);
 
     // set name
     // query to verify the new name

@@ -1,8 +1,8 @@
 process.env = {
   ethereum: 'http://127.0.0.1:8545',
   ipfs: '/ip4/127.0.0.1/tcp/5001',
-  node_http: 'http://127.0.0.1:8000/subgraphs/name/dynamic-datasource-example',
-  node_ws: 'http://127.0.0.1:8001/subgraphs/name/dynamic-datasource-example',
+  node_http: 'http://127.0.0.1:8000/subgraphs/name/dyndatasourceexample',
+  node_ws: 'http://127.0.0.1:8001/subgraphs/name/dyndatasourceexample',
   test_mnemonic:
     'myth like bonus scare over problem client lizard pioneer submit female collect',
   ...process.env,

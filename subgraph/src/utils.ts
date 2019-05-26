@@ -8,6 +8,7 @@ import {
   store,
   Value,
 } from '@graphprotocol/graph-ts';
+import { Debug } from "./types/schema";
 
 export function concat(a: ByteArray, b: ByteArray): ByteArray {
   let out = new Uint8Array(a.length + b.length);
@@ -66,4 +67,18 @@ export function equalStrings(a: string, b: string): boolean {
     }
   }
   return true;
+}
+
+/**
+ * WORKAROUND: there's no `console.log` functionality in mapping.
+ * so we use `debug(..)` which writes a `Debug` entity to the store so you can see them in graphiql.
+ */
+let debugId = 0;
+export function debug(msg: string): void {
+
+  let id = BigInt.fromI32(debugId).toHex();
+  let ent = new Debug(id);
+  ent.set('message', Value.fromString(msg));
+  store.set('Debug', id, ent);
+  debugId++;
 }
